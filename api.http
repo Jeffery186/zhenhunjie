@@ -1,0 +1,8 @@
+POST https://api.github.com/repos/xiaojia21190/zhenhunjie/issues HTTP/1.1
+Content-Type: application/json
+Authorization: token 21d2a4db20a563df1e42c6517c9f35d06090f66f
+
+{
+  "title":"测试",
+  "body": "关闭"
+}
