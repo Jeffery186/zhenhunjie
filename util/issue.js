@@ -35,7 +35,9 @@ const open = async ({ owner, repo, title, body }) => {
 const list = async ({ owner, repo }) => {
     try {
         console.log("list issue");
-        const res = await instance.get(`/repos/${owner}/${repo}/issues`);
+        const res = await instance.get(
+            `/repos/${owner}/${repo}/issues?per_page=1000&state=open`
+        );
         console.log("list");
         return res;
     } catch (error) {

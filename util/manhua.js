@@ -75,7 +75,8 @@ const detailManHua = async (search) => {
         });
 
         // 处理catlog
-        let cat1 = catlogs.slice(0, 225);
+        // let cat1 = catlogs.slice(0, 225);
+        let cat1 = catlogs.slice(176, 225);
         let cat2 = catlogs.slice(399, 461);
         let cat3 = catlogs.slice(516, 521);
         let cat4 = catlogs.slice(693, catlogs.length);
