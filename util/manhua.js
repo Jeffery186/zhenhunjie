@@ -75,13 +75,11 @@ const detailManHua = async (search) => {
         });
 
         // 处理catlog
-        // let cat1 = catlogs.slice(0, 225);
-        // let cat2 = catlogs.slice(399, 461);
-        // let cat3 = catlogs.slice(516, 521);
-        // let cat4 = catlogs.slice(693, catlogs.length);
-        let cat4 = catlogs.slice(694, catlogs.length);
-        // catlogs = cat1.concat(cat2).concat(cat3).concat(cat4);
-        catlogs = cat4;
+        let cat1 = catlogs.slice(0, 225);
+        let cat2 = catlogs.slice(399, 461);
+        let cat3 = catlogs.slice(516, 521);
+        let cat4 = catlogs.slice(693, catlogs.length);
+        catlogs = cat1.concat(cat2).concat(cat3).concat(cat4);
 
         dataList = {
             url: search.url,
