@@ -14,7 +14,7 @@ const run = async () => {
     console.log("all issue =========");
     console.log(result.data[0].number);
 
-    let slicelen = result.data[0].number - 22;
+    let slicelen = result.data[0].number - 57;
     if (zhenhunjies.length === slicelen) return;
     if (zhenhunjies.length > slicelen) {
         let zhenhunjie = zhenhunjies.slice(slicelen, zhenhunjies.length);
