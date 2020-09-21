@@ -282,30 +282,30 @@ const manhuaRssHub = async (search) => {
     console.log("爬取中---------------------");
     let dataList = await detailManHua(search);
 
-    // for (const key in dataList.catlogs) {
-    //     if (dataList.catlogs.hasOwnProperty(key)) {
-    //         const element = dataList.catlogs[key];
-    //         let result = await getImages({
-    //             url: element.url,
-    //         });
+    for (const key in dataList.catlogs) {
+        if (dataList.catlogs.hasOwnProperty(key)) {
+            const element = dataList.catlogs[key];
+            let result = await getImages({
+                url: element.url,
+            });
 
-    //         queryData.push({
-    //             url: element.url,
-    //             imageData: result,
-    //             title: element.text,
-    //         });
-    //     }
-    // }
+            queryData.push({
+                url: element.url,
+                imageData: result,
+                title: element.text,
+            });
+        }
+    }
     // 单机测试
-    let result = await getImages({
-        url: dataList.catlogs[0].url,
-    });
+    // let result = await getImages({
+    //     url: dataList.catlogs[0].url,
+    // });
 
-    queryData.push({
-        url: dataList.catlogs[0].url,
-        imageData: result,
-        title: dataList.catlogs[0].text,
-    });
+    // queryData.push({
+    //     url: dataList.catlogs[0].url,
+    //     imageData: result,
+    //     title: dataList.catlogs[0].text,
+    // });
 
     for (var key in queryData) {
         for (let i = 0; i < queryData[key].imageData.length; i++) {

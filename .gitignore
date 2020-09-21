@@ -106,3 +106,4 @@ dist
 secret.js
 api.http
 app.http
+.DS_Store
