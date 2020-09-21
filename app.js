@@ -4,8 +4,10 @@ const issue = require("./util/issue.js");
 // run weekly at 00:01 UTC
 const run = async () => {
     const zhenhunjies = await manhuaRssHub({
-        url: "https://m.gufengmh8.com/manhua/zhenhunjie/",
+        // url: "https://m.gufengmh8.com/manhua/zhenhunjie/",
+        url: "http://m.taduo.net/manhua/20/",
     });
+    console.log(zhenhunjies);
 
     let result = await issue.list({
         owner: "xiaojia21190",
@@ -14,7 +16,7 @@ const run = async () => {
     console.log("all issue =========");
     console.log(result.data[0].number);
 
-    let slicelen = result.data[0].number - 57;
+    let slicelen = result.data[0].number - 51;
     if (zhenhunjies.length === slicelen) return;
     if (zhenhunjies.length > slicelen) {
         let zhenhunjie = zhenhunjies.slice(slicelen, zhenhunjies.length);
