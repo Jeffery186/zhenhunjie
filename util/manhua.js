@@ -35,9 +35,9 @@ const pageBrower = async () => {
 const detailManHua = async (search) => {
     let dataList = {};
     let browser = await pageBrower();
+    const page = await browser.newPage();
+    page.setDefaultNavigationTimeout(240 * 1000);
     try {
-        const page = await browser.newPage();
-        page.setDefaultNavigationTimeout(240 * 1000);
         await Promise.all([
             page.setUserAgent(userAgent.random()),
             page.setJavaScriptEnabled(true), //  允许执行 js 脚本
@@ -56,8 +56,9 @@ const detailManHua = async (search) => {
 
         let items = $(".chapter-list a");
         items.each((i, element) => {
-            let url = `http://m.taduo.net${$(element).attr("href")}`;
-            let text = $(element).find("span").text();
+            let href = $(element).attr("href");
+            let url = `http://m.taduo.net${href}`;
+            let text = $(element).attr("title");
             catlogs.push({
                 url,
                 text,
@@ -65,7 +66,7 @@ const detailManHua = async (search) => {
         });
 
         dataList = {
-            catlogs,
+            catlogs: catlogs.reverse(),
         };
         await page.close();
         return dataList;
@@ -256,7 +257,7 @@ const base64decode = (str) => {
 const getImages = async (search) => {
     let dataList = [];
     try {
-        let response = await axios.get(search.url, {
+        let response = await axios.default.get(search.url, {
             headers: { "User-Agent": userAgent.random() },
         });
 
