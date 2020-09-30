@@ -141,7 +141,7 @@ const manhuaRssHub = async (search) => {
     console.log(result.data[0].number);
 
     let slicelen = result.data[0].number - 57;
-    if (dataList.catlogs.length === slicelen) return;
+    if (dataList.catlogs.length === slicelen) return queryData;
     if (dataList.catlogs.length > slicelen) {
         let catlogs = dataList.catlogs.slice(slicelen, dataList.catlogs.length);
         for (const key in catlogs) {
