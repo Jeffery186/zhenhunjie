@@ -116,7 +116,7 @@ const getImages = async (search) => {
         let chapterImagesPrev = chapterImagesReg2.exec(context)[1];
         chapterImages.map((res) => {
             dataList.push(
-                `https://res.gufengmh8.com/${chapterImagesPrev}${res.replace(
+                `https://res.xiaoqinre.com/${chapterImagesPrev}${res.replace(
                     /"/g,
                     ""
                 )}`
