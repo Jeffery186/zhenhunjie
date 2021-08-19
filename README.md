@@ -1,4 +1,4 @@
-# Zhenhunjie Weekly
+# 漫画镇魂街 每周更新
 
 ## How to subscribe
 
