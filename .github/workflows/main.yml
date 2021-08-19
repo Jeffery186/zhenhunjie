@@ -2,7 +2,7 @@ name: zhenhjunjie-week
 
 on:
     schedule:
-        - cron: "0 0 */1 * *"
+        - cron: "10 */1 * * *"
 
 jobs:
     fetch-top-posts:
