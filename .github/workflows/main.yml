@@ -1,6 +1,7 @@
 name: zhenhjunjie
 
 on:
+    watch:
     schedule:
         - cron: "0 0 */1 * *"
 
