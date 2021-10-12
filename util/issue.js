@@ -12,7 +12,9 @@ const instance = axios.create({
     baseURL: "https://api.github.com",
     timeout: 50000,
     headers: {
-        Authorization: secrets.Authorization || process.env.Authorization,
+        Authorization: `token ${
+            secrets.Authorization || process.env.Authorization
+        }`,
         "content-type": "application/json",
     },
 });
