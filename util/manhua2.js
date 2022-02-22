@@ -65,7 +65,7 @@ const detailManHua = async (search) => {
 
         let items = $(".comic-view .Drama li");
         items.each((i, element) => {
-            let url = `https://m.gufengmh8.com/${$(element)
+            let url = `https://m.gufengmh9.com/${$(element)
                 .find("a")
                 .attr("href")}`;
             let text = $(element).find("span").text();
