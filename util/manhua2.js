@@ -32,7 +32,7 @@ const detailManHua = async (search) => {
             page.goto(search.url, {
                 waitUntil: "domcontentloaded",
             }),
-            page.waitFor(2000),
+            page.waitForTimeout(2000),
         ]);
         const context = await page.content();
         const $ = cheerio.load(context, {
